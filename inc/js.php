@@ -48,6 +48,7 @@ if(txt!='')
 txt = r['result']['tm_status']['validator_info']['pub_key']['value'];
 txt = base64ToHex(txt);
 txt = 'Mp'+txt;
+txt = '<a href=$explorer/validator/'+txt+' class=minter target=minter>'+txt+'</a>';
 pos = 'td_priv_key_'+c1[ip];
 console.log(ip+' '+pos);
 x = document.getElementById(pos);

@@ -10,5 +10,35 @@ git clone https://github.com/unflexible/minter-stat-php my_new_dir_04
 где  my_new_dir_04 папка в которая будет открываться по 
 http://[IP]/my_new_dir_04
 
-Если у Вас блокчейн минтера находиться на другом сервере, то обязательно нужно в файл 
-Для того, чтобы работал функци
+Если у Вас блокчейн минтера находиться на другом сервере, 
+то обязательно нужно в файл conf.ssh указать приватный ключ
+
+-----BEGIN RSA PRIVATE KEY-----
+MIIEowIBAAKCAQEAwBxN0IOT9QM702vBbQOU1qvbl6QM/ouxPZaEwf6PYHyR7q9v
+CnKN3dTjO7cHXG90MBbOX+ZJI5SKupkHOcIDVw4ykBm6U111s/eiXADwDAKq/5VM
+LinDRf5mjAaFhUWHvVS4nrdGJnC7cQ3yMxcq4Dr3gd/244G5pigWQontrPu+k/qC
+mKgAyCwQ3arv46IffhJGtfNmXsyXuA1TBXi9w39qnxKLoqoqntVQoaGWE2BMhBfQ
+nAvtqUa6Rm8Fa++WvFjZBE0eqigUnuquapDge+0yOOgsEeD0Ui58rVkjzBSxGz9L
+UfY2Y7kdrJlLPG7cJ5FcAg3JGmKamlejWGwAzwIDAQABAoIBAQCM2nPHRSHPS96q
+ZeA9AJasdfasdfadsfixMlIGNpGDKfKJcYFVxKX1lqhA2TKBeIpU0/PeZmcLulZ4
+98hPdcujIZq7AtIVW3n4SMF2+Y0HEVG08Q8Y7a/p+tvPINz22QLsM1jlrfS2LIOS
+IaqKARuDqlhclgxbxHqMs+mWQbDM2cX6ulupcBu/Gnxstfm/ZLVoXnis8KHJDu9a
+NOrRsbjJ2odGOBda+bNqD89K0fZqUf2QrMSJksC/KRQMumQhxFpeHjmKMGmrNk1Q
+GbaC3thAwecQuLi8HgIPtQhmojNrasgrIUZ99HhRmhc6oS1iy3QnbPEGaaw/d3vW
+AQ3KoklZAoGBAOXUt9malUmlVDm8+w2JjLd+s5aw9myRl841JTGhBDvwGNgWFXqU
+asasdfOKnp87ZiVq9v6XqhPtOGDqpogMNhBmzNDh/1f4vQKqWtXwxSAIm7Hua/Kk
+mxPCQj9dnqGYXfV6r8adsfadfadf3O05Ngg9HBXj6QxzQk7D556zBzEjAoGBANX8
+Fap1a2YZ4Bsn2yBf65nelYJTwZWYVJ4oyalNq8zr7XaLfDrTDYw+lto6AJuviFqw
+E0wwgoHoiwVTgGmTULfSBmDWaU9wvutprLaHsaPitr5snY6gup8c/malMntwGhXn
+stoBFvRhDo2IjjKSJffV7hkIeN42Ctsnnwkz8MplAoGAdVcplpvp5HPYkLH/q2Wy
+xmyV3DX1WnDrBIj1uGTw+HkY9howVSkzqrYbX2cCnWGCQVBfUpS0bQAMbM7gv00c
+vTr/DxaTe6KvPZEkV15aBoTemPWVf4iy9F+V2yw9NVvJfO9ql/wrDdjlIT0RYrx2
+7bXlhPeboJOoIva6ZrgYz+kCgYABKmdfz1Xvb3KmEziBW6Rn6St9U0F5tCO53NUE
+ZBTsf9iCTc42b9HiErE1rR01u+YNQGpKfvUnCgI/3C2V5aSJ6833FxPpx95yX9f+
+Ao04LFL8hJDzJvL9TOYh3wKAY6LwvZtezqS2XhT7NmQ36E3mpLawUjh+VWMHwJaA
+MVU9dQKBgF31+0qEUYdfUMuX1O6dbnLKbdzDdfKYx4yJ/NlpwiRfgniSMNhQs1If
+Q+J6cB3c/T8+h6CEEXTnSx6uv+hvasdfadfasdfasdfDgcxddCl4jSBmOunfrpgW
+LLFeUWIIbFJehthow+oNUGAKuzadbFBFhk+gBFb0CtNh36cpghRU
+-----END RSA PRIVATE KEY-----
+
+

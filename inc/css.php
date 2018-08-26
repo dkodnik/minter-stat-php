@@ -79,6 +79,11 @@ color: ".$color[minter].";
 {
 /*    margin:0 auto 20px 0;*/
 }
+.minter
+{
+    font-weight:bold;
+    color:".$color[minter].";
+}
 ";
 ?>
 

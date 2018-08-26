@@ -41,20 +41,21 @@ foreach($reg as $line)
     $a = "";
     $file2 = "cache/$ip.txt";
     $file = $dir."/".$file2;
-    $url = $file2;
+//    $url = $file2;
 //    print "file = $file2<br>";
-    $a = file_get_contents($file);
-    $script .= " httpGetAsync('$file2', '$ip',parse_res);\n";
+//    $a = file_get_contents($file);
+//    $script .= " httpGetAsync('$file2', '$ip',parse_res);\n";
+    $script .= " httpGetAsync('$url', '$ip',parse_res);\n";
 
     $script .= "c1['$ip'] = '$cnn';\n";
     $script .= "c2['$cnn'] = '$ip';\n";
     $cnn++;
 
-    if($a)
-    {
-    $a = json_decode($a,1);
+//    if($a)
+//    {
+//    $a = json_decode($a,1);
 //    print_mas($a);
-    }
+//    }
 /*
     $a = file_get_contents($url);
 //    print_mas($a);

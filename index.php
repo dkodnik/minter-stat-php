@@ -7,7 +7,7 @@ $shadow = 1;
 
 $item = $_GET[item];
 if(!$item)
-$item = "center";
+$item = "validators";
 
 $dir = dirname(__FILE__);
 if(!$shadow)$inc[] = "header";
@@ -19,7 +19,11 @@ if(!$shadow)$inc[] = "info_panel";
 $inc[] = $item;
 
 
-if(!$shadow)$inc[] = "footer";
+if(!$shadow)
+{
+$inc[] = "script_time";
+$inc[] = "footer";
+}
 
 foreach($inc as $file)
 {

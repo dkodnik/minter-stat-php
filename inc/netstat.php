@@ -1,6 +1,4 @@
 <?php
-//file_put_contents("/tmp/01111","");
-//print $rsa;die;
 $ssh = "";
 if($api_host!="127.0.0.1")
 {
@@ -13,7 +11,6 @@ $user = "al";
 $ssh = "ssh $api_host -l $user -i $file ";
 }
 
-//print "rsa = $rsa ";
 $exec = $ssh."netstat -nat 2>&1 | grep -v 'LISTEN' | grep 26656 | grep ESTABLISHED";
 //print $exec;
 exec($exec,$reg);
@@ -29,43 +26,20 @@ foreach($reg as $line)
     unset($reg);
     $t = preg_replace($preg,"\t",$line);
     $t = explode("\t",$t);
-//    print_mas($t);
     $t2 = $t[4];
     $t2 = explode(":",$t2);
     $ip = $t2[0];
-//    print "ip = $ip<br>";
-//    $this_api = "http://$ip:26656";
     $this_api = "http://$ip:8841";
     $url = $this_api."/api/status";
-//    print_mas($url);
     $a = "";
     $file2 = "cache/$ip.txt";
     $file = $dir."/".$file2;
-//    $url = $file2;
-//    print "file = $file2<br>";
-//    $a = file_get_contents($file);
-//    $script .= " httpGetAsync('$file2', '$ip',parse_res);\n";
     $script .= " httpGetAsync('$url', '$ip',parse_res);\n";
 
     $script .= "c1['$ip'] = '$cnn';\n";
     $script .= "c2['$cnn'] = '$ip';\n";
     $cnn++;
 
-//    if($a)
-//    {
-//    $a = json_decode($a,1);
-//    print_mas($a);
-//    }
-/*
-    $a = file_get_contents($url);
-//    print_mas($a);
-    print "<a href=$url>$url</a><br>";
-    print "<iframe src=$url style=\"width:100%;height:100;\"></iframe>";
-
-    print $file."<br>";
-//    $a = file_get_contents($url);
-    file_put_contents($file,$a);
-*/
 
 }
 
@@ -79,13 +53,13 @@ reset($th);
 foreach($th as $k=>$v)
 {
 
-//    $script .= "var th = new Array('".implode()."')";
     $script .= "th['$nn'] = '$k'\n";
 $nn++;
 }
 
 
 
+print "<div class=container>";
 
 print "<table class=\"table table-striped tbl_$item\">";
     reset($th);
@@ -125,7 +99,7 @@ print "<tr class=\"tr tr$i\">";
 print "</tr>\n";
 }
 print "</table>\n";
-
+print "</div>";
 
 print "<script>
 $script

@@ -1,11 +1,8 @@
 <?php
-//include "conf.php";
 
 $from = $api."net_info";
 $a = file_get_contents($from);
 $a = json_decode($a,1);
-//print_r($a);
-//file_put_contents(__FILE__.".log",print_r($a,1));
 $th[nn] = "№";
 $th[id] = "";
 $th[listen_addr] = "";
@@ -14,6 +11,7 @@ $th[version] = "";
 $th[other] = "";
 $th[is_outbound] = "";
 
+print "<div class=container>";
 print "<table class=\"table table-striped tbl_$item\">";
 
 reset($th);
@@ -67,4 +65,5 @@ foreach($a[result][peers] as $v2)
     print "</tr>";
 }
 print "</table>";
+print "</div>";
 ?>

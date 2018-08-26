@@ -1,14 +1,12 @@
 <?php
 
+
 $sort = $_GET[order];
 $desc = (isset($_GET[desc])?1:0);
-//print "desc = $desc";
 
 $from = $api."validators";
 $a = file_get_contents($from);
 $a = json_decode($a,1);
-//print_r($a);
-//file_put_contents(__FILE__.".log",print_r($a,1));
 
 $th[num] = "№";
 $th[nn] = "";
@@ -23,14 +21,10 @@ $th[commission] = "%";
 $th[status] = "";
 $th[absent_times] = "";
 
-//$th[listen_addr] = "";
-//$th[network] = "";
-//$th[version] = "";
-//$th[other] = "";
-//$th[is_outbound] = "";
 $skip_sort = "|candidate_address|";
 $skip_sort = "|coins|";
 
+print "<div class=container>";
 print "<table class=\"table table-striped tbl_$item\">";
 
 
@@ -39,12 +33,6 @@ foreach($a[result] as $nn=>$v2)
     $mas[data][$nn] = $v2;
     $mas[nn][$nn] = $nn;
 
-//    $v = $v2[candidate][pub_key];
-//    $mas[pub_key][$v] = $nn;
-
-//    $v = $v2[candidate][candidate_address].".$k";
-//    $mas[candidate_address][$v] = $nn;
-    //-------------------------------
     $t = $v2[candidate][stakes];
 
     unset($t2,$coins);
@@ -55,7 +43,6 @@ foreach($a[result] as $nn=>$v2)
     }
     $t1 = count($t2)."/".count($t).".$nn";
     $t11 = count($t).".$nn";
-//print "t1 = $t1<br>";
     $mas[delegators][$t11] = $nn; ;
     $mas[data2][delegators][$nn] = $t1; ;
 
@@ -72,7 +59,6 @@ foreach($a[result] as $nn=>$v2)
     if(!isset($v2[$k3]))continue;
 
     $v = $v2[$k3].".$nn";
-//print "dddddddddddd $k3 $nn $v<br>";
     $mas[$k3][$v] = $nn;
     $mas[data2][$k3][$nn] = $v;
     }
@@ -99,8 +85,6 @@ foreach($th as $k=>$v)
     $val = $v;
     if(!$val)$val = $k;
     $add = "order=$k";
-//    if($k==$sort && !$desc)
-//    $add .= "&desc";
 
     $cls = "$k";
     $t = "";
@@ -130,20 +114,15 @@ print "</tr>";
 
 
 
-//print "sort = $sort";
 $c = $mas[$sort];
-//print_mas($c);
-//print_r($c);
 if(!$desc)
 ksort($c);
 else
 krsort($c);
-//foreach($c as $k=>$v2)
 $nn = 0;
 foreach($c as $v2)
 {
 $nn++;
-//$nn = $v2;
     $row = $mas[data][$v2];
 
     print "<tr>";
@@ -162,14 +141,9 @@ $nn++;
 	    
 
 	    default:
-//	    case "pub_key":
-//	    case "candidate_address":
-//	    case "total_stake":
-//		$val = $row[candidate][$k];
 		$val = $mas[data2][$k][$v2];
 		$t = explode(".",strrev($val),2);
 		$val = strrev($t[1]);
-//	    break;
 	}
 	switch($k)
 	{
@@ -199,7 +173,6 @@ $nn++;
 		$val = "<a href=$explorer/address/".$val."  data-toggle=tooltip2 target=explorer title=\"$val \">$t2</a>";
 	    break;
 	}
-//    $val = $k;
     print "<td class=$k>$val</td>";
     }
     
@@ -208,5 +181,6 @@ $nn++;
 }
 
 print "</table>";
+print "</div>";
 
 ?>
